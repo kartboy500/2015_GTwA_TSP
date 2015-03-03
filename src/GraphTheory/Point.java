@@ -98,7 +98,8 @@ public class Point {
 		
 		double deltaX= this.getX()-v1.getX();
 		double deltaY= this.getY()-v1.getY();
-		double angleInDegrees = Math.atan(deltaY / deltaX) * 180 *(1/Math.PI);
+		double angleInDegrees = Math.atan2(deltaY, deltaX) * 180 *(1/Math.PI);
+		//double angleInDegrees = Math.atan(deltaY/deltaX) * 180 *(1/Math.PI);
 		return angleInDegrees;
 	}
 
