@@ -26,14 +26,26 @@ public static void main(String[] args) {
 	}
 	
 	ArrayList<Double> orderedAngles = new ArrayList<>(nPoints);
-	// add sort for angles from least to greatest
+	MergeSorter sorter = new MergeSorter(angles);
+	orderedAngles = sorter.sort();
 	
 	ArrayList<Point> orderedPoints = new ArrayList<>(nPoints);
 	for(double angle : angles) {
 		orderedPoints.add(anglesToPoints.get(angle));
 	}
 	
+	double totalLength = 0;
+	for(int i = 0; i < orderedPoints.size(); i++) {
+		if(i < orderedPoints.size()-1) {
+			totalLength += orderedPoints.get(i).getDistance(orderedPoints.get(i+1));
+		}
+		else {
+			totalLength += orderedPoints.get(i).getDistance(orderedPoints.get(0));
+		}
+	}
+	
 	// Now, use the ArrayList orderedPoints and the ArrayList orderedAngles for the visualization
+	// totalLength now has the total length of the cycle
 	
 	// Why are you printing to terminal? I am commenting this out for now
 	/*System.out.println(COM.getX() + "\t" + COM.getY());

@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.ArrayList;
 
-import Temperature1.Projectile;
+//import Temperature1.Projectile;
 
 public class Universe {
 	
